@@ -6,32 +6,38 @@
 <body>
     <script>
 
-    function playRound(playerSelection, computerSelection) {
-        if (computerSelection == "rock") {
-            return "tie game";
-        } else if (computerSelection == "paper") {
-            return "computer wins";
-        } else if (computerSelection == "scissors") {
-            return "player wins";
-        }
+function playRound(playerSelection, computerSelection) {
+
+    console.log('computer plays ' + computerSelection);
+    console.log('you played ' + playerSelection);
+
+    if(computerSelection == playerSelection) {
+        return 'tie game';
+    } else if (computerSelection == 'paper' && playerSelection == 'rock' || computerSelection == 'scissors' && playerSelection == 'paper' || computerSelection == 'rock' && playerSelection == 'scissors') {
+        return 'computer wins';
+    } else if (computerSelection == 'scissors' && playerSelection == 'rock' || computerSelection == 'rock' && playerSelection == 'paper' || computerSelection == 'paper' && playerSelection == 'scissors') {
+        return 'player wins';
     }
+}
 
-    function computerPlay() {
-        let randomNumber = Math.floor(Math.random() * 3 + 1);
-        if (randomNumber == 1) {
-            return "rock";
-        } else if (randomNumber == 2) {
-            return "paper";
-        } else if (randomNumber == 3) {
-            return "scissors";
-        }
+
+function computerPlay() {
+    let randomNumber = Math.floor(Math.random() * 3 + 1);
+    if (randomNumber == 1) {
+        return 'rock';
+    } else if (randomNumber == 2) {
+        return 'paper';
+    } else if (randomNumber == 3) {
+        return 'scissors';
     }
+}
 
-      //console.log('computer randomly plays = ' + computerPlay())
 
-    let playerSelection = "paper";
-    let computerSelection = "rock";
-    console.log(playRound(playerSelection, computerSelection));
+
+
+let playerSelection = 'scissors';
+let computerSelection = computerPlay();
+console.log(playRound(playerSelection, computerSelection));
     
     </script>
 </body>
