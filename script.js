@@ -27,9 +27,9 @@ function game() {
     }
 
 
-let playerSelection = 'scissors';
+let playerSelection = prompt('rock, paper or scissors?').toLowerCase();
 let computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+alert(playRound(playerSelection, computerSelection));
 console.log('p: ' + playerScore);
 console.log('c: ' + computerScore);
 }
