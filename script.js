@@ -4,6 +4,7 @@ let computerScore = 0;
 function game() {
 
     function playRound(playerSelection, computerSelection) {
+
         if (computerSelection == playerSelection) {
             return 'tie game';
         } else if ((computerSelection == 'paper' && playerSelection == 'rock') || (computerSelection == 'scissors' && playerSelection == 'paper') || (computerSelection == 'rock' && playerSelection == 'scissors')) {
@@ -12,6 +13,8 @@ function game() {
         } else if ((computerSelection == 'scissors' && playerSelection == 'rock') || (computerSelection == 'rock' && playerSelection == 'paper') || (computerSelection == 'paper' && playerSelection == 'scissors')) {
             playerScore++;
             return 'player wins';
+        } else {
+            return 'o h  n o';
         }
     }
 
