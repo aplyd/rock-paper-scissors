@@ -7,10 +7,14 @@ function game() {
 
         if (computerSelection == playerSelection) {
             return 'tie game';
-        } else if ((computerSelection == 'paper' && playerSelection == 'rock') || (computerSelection == 'scissors' && playerSelection == 'paper') || (computerSelection == 'rock' && playerSelection == 'scissors')) {
+        } else if ((computerSelection == 'paper' && playerSelection == 'rock') || 
+                    (computerSelection == 'scissors' && playerSelection == 'paper') || 
+                    (computerSelection == 'rock' && playerSelection == 'scissors')) {
             computerScore++;
             return 'computer wins';
-        } else if ((computerSelection == 'scissors' && playerSelection == 'rock') || (computerSelection == 'rock' && playerSelection == 'paper') || (computerSelection == 'paper' && playerSelection == 'scissors')) {
+        } else if ((computerSelection == 'scissors' && playerSelection == 'rock') || 
+                    (computerSelection == 'rock' && playerSelection == 'paper') || 
+                    (computerSelection == 'paper' && playerSelection == 'scissors')) {
             playerScore++;
             return 'player wins';
         } else {
