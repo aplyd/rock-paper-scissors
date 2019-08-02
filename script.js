@@ -34,11 +34,27 @@ function game() {
     }
 
 
-let playerSelection = prompt('rock, paper or scissors?').toLowerCase();
+//let playerSelection = prompt('rock, paper or scissors?').toLowerCase();
+
+
+
 let computerSelection = computerPlay();
 alert(playRound(playerSelection, computerSelection));
 console.log('p: ' + playerScore);
 console.log('c: ' + computerScore);
 }
 
-game();
+function playRock() {
+    playerSelection = "rock";
+    game();
+}
+
+function playPaper() {
+    playerSelection = "paper";
+    game();
+}
+
+function playScissors() {
+    playerSelection = "scissors";
+    game();
+}
