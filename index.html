@@ -3,15 +3,33 @@
 <head>
     <title>Rock Paper Scissors</title>
     <link rel= "stylesheet" type="text/css" href="./style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
     <div class="frame">
 
-        <div class="jumbo">
-            <h3 id="rpstitle">rock paper scissors</h3>
+        <div class="header">
+            <h2 id="rpstitle">rock paper scissors</h2>
+
         </div>
+
+            <div class="scorecontainer">
+                <div id="leftscore">
+                    <h4>YOU</h4>
+                    <hr width="90%">
+
+                </div>
+
+                <p id="vs">VS.</p>
+
+                <div id="rightscore">
+                    <h4>COMPUTER</h4>
+                    <hr width="90%">
+                </div>
+
+            </div>
 
         <div class="rockcontainer">
                 <input type="image" src="./5461d21528d3db2d59b22a875510f22c.jpg" name="playRock" class="play-buttons" id="rock" onclick="playRock()"/>
