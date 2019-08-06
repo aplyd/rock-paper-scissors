@@ -2,6 +2,11 @@ let playerScore = 0;
 let computerScore = 0;
 
 function game() {
+    
+
+
+
+    
 
     function playRound(playerSelection, computerSelection) {
 
@@ -34,27 +39,44 @@ function game() {
     }
 
 
-//let playerSelection = prompt('rock, paper or scissors?').toLowerCase();
-
-
 
 let computerSelection = computerPlay();
-alert(playRound(playerSelection, computerSelection));
+//alert(playRound(playerSelection, computerSelection));
 console.log('p: ' + playerScore);
 console.log('c: ' + computerScore);
 }
 
+
+
+function timer() {
+    let interval = 3;
+    let counter = document.querySelector('#countdown');
+    counter.innerHTML = '';
+    counter.style.fontSize = '60px';
+    setInterval(function() {
+        document.querySelector('#countdown').textContent = interval--;
+
+        if (interval < 0) {
+            document.querySelector('#countdown').textContent = '';
+        }
+
+    }, 1000);
+}
+
 function playRock() {
     playerSelection = "rock";
+    timer();
     game();
 }
 
 function playPaper() {
     playerSelection = "paper";
+    timer();
     game();
 }
 
 function playScissors() {
     playerSelection = "scissors";
+    timer();
     game();
 }
