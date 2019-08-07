@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rock Paper Scissors</title>
+    <link rel= "stylesheet" type="text/css" href="./style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <div class="frame">
+
+        <header class="header">
+            <h2 id="rpstitle">rock paper scissors</h2>
+        </header>
+
+            <div class="scorecontainer">
+                <div id="leftscore">
+                    <h4>MORTAL HUMAN</h4>
+                    <hr width="90%">
+                    <div id="playerscore"></div>
+                </div>
+
+                <p id="vs">VS</p>
+
+                <div id="rightscore">
+                    <h4>SUPER COMPLICATED ARTIFICIAL INTELLIGENCE</h4>
+                    <hr width="90%">
+                </div>
+
+            </div>
+        
+        
+
+        <div class="selectcontainer">
+
+            <h4 id="round">ROUND ONE</h4>
+
+            <h4 id="countdown">make your selection</h4>
+
+            <div class="rockselect" onclick="playRock()">
+            
+                <input type="image" src="./5461d21528d3db2d59b22a875510f22c.jpg" name="playRock" class="play-buttons" id="rock"/>
+            </div>
+            <div class="paperselect" onclick="playPaper()">
+            
+                <input type="image" src="./k88bTFB.jpg" name="playPaper" class="play-buttons" id="paper"/>
+            </div>
+            <div class="scissorsselect" onclick="playScissors()">
+                
+                <input type="image" src="./scissors.jpg" name="playScissors" class="play-buttons" id="scissors"/>
+            </div>
+        
+
+            <div class="computerselect" id="cps1">
+                <p id="mystery">?</p>
+            </div>
+            <div class="computerselect" id="cps2">
+                <p id="mystery">?</p>
+            </div>
+            <div class="computerselect" id="cps3">
+                <p id="mystery">?</p>
+            </div>
+        </div>
+
+
+            <!--
+        <div class="rockcontainer">
+                <input type="image" src="./5461d21528d3db2d59b22a875510f22c.jpg" name="playRock" class="play-buttons" id="rock" onclick="playRock()"/>
+        </div>
+
+        <div class="papercontainer">
+                <input type="image" src="./k88bTFB.jpg" name="playPaper" class="play-buttons" id="paper" onclick="playPaper()"/>
+        </div>
+
+        <div class="scissorscontainer">
+                <input type="image" src="./scissors.jpg" name="playScissors" class="play-buttons" id="scissors" onclick="playScissors()"/>
+        </div>
+            -->
+    </div>
+    <script type="text/javascript" src="./script.js"></script>
+</body>
+</html>
