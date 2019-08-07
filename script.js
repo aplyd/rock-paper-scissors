@@ -1,6 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
-let roundIncrement = 0;
+let roundIncrement = 1;
 
 function game() {
 
