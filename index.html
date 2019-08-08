@@ -15,17 +15,22 @@
         </header>
 
             <div class="scorecontainer">
-                <div id="leftscore">
+                <div id="leftscoreframe">
                     <h4>MORTAL HUMAN</h4>
                     <hr width="90%">
-                    <div id="playerscore"></div>
+                        <div id="playerscore">
+                            <p id="playerpoints"></p>
+                        </div>
                 </div>
 
                 <p id="vs">VS</p>
 
-                <div id="rightscore">
+                <div id="rightscoreframe">
                     <h4>SUPER COMPLICATED ARTIFICIAL INTELLIGENCE</h4>
                     <hr width="90%">
+                        <div id="computerscore">
+                            <p id=computerpoints></p>
+                        </div>
                 </div>
 
             </div>
@@ -34,9 +39,9 @@
 
         <div class="selectcontainer">
 
-            <h4 id="round">ROUND ONE</h4>
+            <h4 id="countdown">choose an option</h4>
 
-            <h4 id="countdown">make your selection</h4>
+            <h4 id="round"></h4>
 
             <div class="rockselect" onclick="playRock()">
             
