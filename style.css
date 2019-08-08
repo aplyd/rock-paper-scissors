@@ -181,3 +181,11 @@ h4 {
     border-radius: 5px;
     overflow: hidden;
 }
+
+#playerpoints {
+    font-size: 30px;
+}
+
+#computerpoints {
+    font-size: 30px;
+}
