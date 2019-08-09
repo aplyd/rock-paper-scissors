@@ -8,6 +8,10 @@ h4 {
     font-family: 'Raleway', sans-serif;
 }
 
+p {
+    font-family: 'Raleway', sans-serif;
+}
+
 .frame { 
     display: grid;
     grid-template-columns: 100px 1fr 200px 1fr 100px;
@@ -108,7 +112,12 @@ h4 {
     grid-column: 2;
     grid-row: 4;
     border-radius: 10px;
-
+    background-color: #D1C5B7;
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 25px;
+    border: solid 1px black;
 }
 
 
@@ -116,37 +125,51 @@ h4 {
     grid-column: 2;
     grid-row: 5;
     border-radius: 10px;
-
+    background-color: lightgray;
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 25px;
+    border: solid 1px black;
 }
 
 .scissorsselect {
     grid-column: 2;
     grid-row: 6;
-
     border-radius: 10px;
-
+    background-color: #B7D1B8;
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 25px;
+    border: solid 1px black;
 }
 
-.computerselect {
+.c-selectrock {
     grid-column: 4;
-    background-color: grey;
-    border-radius: 10px;
-
-}
-
-#cps1 {
     grid-row: 4;
+    background-color: black;
+    border-radius: 10px;
+    border: solid 1px black;
 }
 
-#cps2 {
+.c-selectpaper {
+    grid-column: 4;
     grid-row: 5;
+    background-color: black;
+    border-radius: 10px;
+    border: solid 1px black;
 }
 
-#cps3 {
+.c-selectscissors {
+    grid-column: 4;
     grid-row: 6;
+    background-color: black;
+    border-radius: 10px;
+    border: solid 1px black;
 }
 
-#mystery {
+.mystery {
     color: white;
     text-align: center;
     padding-top: 30px;

@@ -2,6 +2,14 @@ let playerScore = 0;
 let computerScore = 0;
 let roundIncrement = 0;
 
+let cSelectRock = document.querySelector('.c-selectrock');
+let cSelectPaper = document.querySelector('.c-selectpaper');
+let cSelectScissors = document.querySelector('.c-selectscissors');
+
+let revealRock = document.querySelector('#revealrock');
+let revealPaper = document.querySelector('#revealpaper');
+let revealScissors = document.querySelector('#revealscissors');
+
 // let counter = document.querySelector('#countdown');
 //     counter.style.fontSize = '20px';
     
@@ -38,35 +46,63 @@ function game() {
 
     // timer();
 
+    //game engine
     function playRound(playerSelection, computerSelection) {
 
         if (computerSelection == playerSelection) {
-            document.querySelector('#countdown').textContent = 'tie';
+            document.querySelector('#countdown').textContent = 'draw';
 
         } else if ((computerSelection == 'paper' && playerSelection == 'rock') || 
                     (computerSelection == 'scissors' && playerSelection == 'paper') || 
                     (computerSelection == 'rock' && playerSelection == 'scissors')) {
             computerScore++;
-            document.querySelector('#countdown').textContent = 'computer';
+            document.querySelector('#countdown').textContent = 'AI won';
 
         } else if ((computerSelection == 'scissors' && playerSelection == 'rock') || 
                     (computerSelection == 'rock' && playerSelection == 'paper') || 
                     (computerSelection == 'paper' && playerSelection == 'scissors')) {
             playerScore++;
-            document.querySelector('#countdown').textContent = 'player';
+            document.querySelector('#countdown').textContent = 'you won';
         } 
     }
+
+    //reveal computer selection
+    
+
 
     //generate random num and assign to selection
     function computerPlay() {
         let randomNumber = Math.floor(Math.random() * 3 + 1);
         if (randomNumber == 1) {
-            return 'rock';
+            cSelectRock.style.backgroundColor = 'rgb(' + 209 + ',' + 197 + ',' + 183 + ')';
+            cSelectPaper.style.backgroundColor = 'black';
+            cSelectScissors.style.backgroundColor = 'black';
+            revealRock.textContent = "ROCK";
+            revealPaper.textContent = "?";
+            revealScissors.textContent = "?";
+                return 'rock';
+
         } else if (randomNumber == 2) {
+            cSelectPaper.style.backgroundColor = "lightgrey";
+            cSelectRock.style.backgroundColor = 'black';
+            cSelectScissors.style.backgroundColor = 'black';
+            revealPaper.textContent = "PAPER";
+            revealRock.textContent = "?";
+            revealScissors.textContent = "?";
             return 'paper';
+
         } else if (randomNumber == 3) {
+            cSelectScissors.style.backgroundColor = 'rgb(' + 183 + ',' + 209 + ',' + 184 + ')';
+            cSelectPaper.style.backgroundColor = 'black';
+            cSelectRock.style.backgroundColor = 'black';
+            revealScissors.textContent = "SCISSORS";
+            revealPaper.textContent = "?";
+            revealRock.textContent = "?";
             return 'scissors';
         }
+
+    
+
 
     }
 

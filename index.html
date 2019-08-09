@@ -16,7 +16,7 @@
 
             <div class="scorecontainer">
                 <div id="leftscoreframe">
-                    <h4>MORTAL HUMAN</h4>
+                    <h4>MORTAL HUMAN (YOU)</h4>
                     <hr width="90%">
                         <div id="playerscore">
                             <p id="playerpoints"></p>
@@ -43,45 +43,30 @@
 
             <h4 id="round"></h4>
 
+            <!-- player selection -->
             <div class="rockselect" onclick="playRock()">
-            
-                <input type="image" src="./5461d21528d3db2d59b22a875510f22c.jpg" name="playRock" class="play-buttons" id="rock"/>
+                <p>ROCK</p>
             </div>
             <div class="paperselect" onclick="playPaper()">
-            
-                <input type="image" src="./k88bTFB.jpg" name="playPaper" class="play-buttons" id="paper"/>
+                <p>PAPER</p>
             </div>
             <div class="scissorsselect" onclick="playScissors()">
-                
-                <input type="image" src="./scissors.jpg" name="playScissors" class="play-buttons" id="scissors"/>
+                <p>SCISSORS</p>
             </div>
         
 
-            <div class="computerselect" id="cps1">
-                <p id="mystery">?</p>
+            <!-- computer selection -->
+            <div class="c-selectrock">
+                <p class="mystery" id="revealrock">?</p>
             </div>
-            <div class="computerselect" id="cps2">
-                <p id="mystery">?</p>
+            <div class="c-selectpaper">
+                <p class="mystery" id="revealpaper">?</p>
             </div>
-            <div class="computerselect" id="cps3">
-                <p id="mystery">?</p>
+            <div class="c-selectscissors">
+                <p class="mystery" id="revealscissors">?</p>
             </div>
         </div>
 
-
-            <!--
-        <div class="rockcontainer">
-                <input type="image" src="./5461d21528d3db2d59b22a875510f22c.jpg" name="playRock" class="play-buttons" id="rock" onclick="playRock()"/>
-        </div>
-
-        <div class="papercontainer">
-                <input type="image" src="./k88bTFB.jpg" name="playPaper" class="play-buttons" id="paper" onclick="playPaper()"/>
-        </div>
-
-        <div class="scissorscontainer">
-                <input type="image" src="./scissors.jpg" name="playScissors" class="play-buttons" id="scissors" onclick="playScissors()"/>
-        </div>
-            -->
     </div>
     <script type="text/javascript" src="./script.js"></script>
 </body>
