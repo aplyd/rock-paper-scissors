@@ -6,6 +6,10 @@ let cSelectRock = document.querySelector('.c-selectrock');
 let cSelectPaper = document.querySelector('.c-selectpaper');
 let cSelectScissors = document.querySelector('.c-selectscissors');
 
+let rockSelect = document.querySelector('.rockselect');
+let paperSelect = document.querySelector('.paperselect');
+let scissorsSelect = document.querySelector('.scissorsselect');
+
 let revealRock = document.querySelector('#revealrock');
 let revealPaper = document.querySelector('#revealpaper');
 let revealScissors = document.querySelector('#revealscissors');
@@ -55,14 +59,14 @@ function game() {
         } else if ((computerSelection == 'paper' && playerSelection == 'rock') || 
                     (computerSelection == 'scissors' && playerSelection == 'paper') || 
                     (computerSelection == 'rock' && playerSelection == 'scissors')) {
-            computerScore++;
-            document.querySelector('#countdown').textContent = 'AI won';
+                        playerScore++;
+                        document.querySelector('#countdown').textContent = 'you won';
 
         } else if ((computerSelection == 'scissors' && playerSelection == 'rock') || 
                     (computerSelection == 'rock' && playerSelection == 'paper') || 
                     (computerSelection == 'paper' && playerSelection == 'scissors')) {
-            playerScore++;
-            document.querySelector('#countdown').textContent = 'you won';
+                        computerScore++;
+                        document.querySelector('#countdown').textContent = 'AI won';
         } 
     }
 
@@ -71,31 +75,43 @@ function game() {
 
 
     //generate random num and assign to selection
+    //these should have been addClass/removeClass but we're in too deep
     function computerPlay() {
         let randomNumber = Math.floor(Math.random() * 3 + 1);
         if (randomNumber == 1) {
             cSelectRock.style.backgroundColor = 'rgb(' + 209 + ',' + 197 + ',' + 183 + ')';
+            cSelectRock.style.border = '3px solid black';
+            revealRock.textContent = "ROCK";
+            
+            
+            //reset others
             cSelectPaper.style.backgroundColor = 'black';
             cSelectScissors.style.backgroundColor = 'black';
-            revealRock.textContent = "ROCK";
             revealPaper.textContent = "?";
             revealScissors.textContent = "?";
                 return 'rock';
 
         } else if (randomNumber == 2) {
             cSelectPaper.style.backgroundColor = "lightgrey";
+            cSelectPaper.style.border = "3px solid black";
+            revealPaper.textContent = "PAPER";
+            
+
+            //reset others
             cSelectRock.style.backgroundColor = 'black';
             cSelectScissors.style.backgroundColor = 'black';
-            revealPaper.textContent = "PAPER";
             revealRock.textContent = "?";
             revealScissors.textContent = "?";
             return 'paper';
 
         } else if (randomNumber == 3) {
             cSelectScissors.style.backgroundColor = 'rgb(' + 183 + ',' + 209 + ',' + 184 + ')';
+            cSelectScissors.style.border = '3px solid black';
+            revealScissors.textContent = "SCISSORS";
+
+            //reset others
             cSelectPaper.style.backgroundColor = 'black';
             cSelectRock.style.backgroundColor = 'black';
-            revealScissors.textContent = "SCISSORS";
             revealPaper.textContent = "?";
             revealRock.textContent = "?";
             return 'scissors';
@@ -119,26 +135,39 @@ function game() {
     playerpoints.textContent = pointsToMarks[playerScore];
     computerpoints.textContent = pointsToMarks[computerScore];
 
-    console.log('c: ' + computerScore);
-    console.log('p: ' + playerScore);
+    console.log( 'c: ' + computerSelection +  computerScore);
+    console.log('p: ' + playerSelection +  playerScore);
+
 }
 
 
 
 function playRock() {
-    document.querySelector('#countdown').textContent = '';
+    //document.querySelector('#countdown').textContent = '';
+    rockSelect.style.border = "3px solid black";
+    scissorsSelect.style.border = "1px solid black";
+    paperSelect.style.border = "1px solid black";
+
     playerSelection = "rock";
     game();
 }
 
 function playPaper() {
-    document.querySelector('#countdown').textContent = '';
+    //document.querySelector('#countdown').textContent = '';
+    paperSelect.style.border = "3px solid black";
+    rockSelect.style.border = "1px solid black";
+    scissorsSelect.style.border = "1px solid black";
+
     playerSelection = "paper";
     game();
 }
 
 function playScissors() {
-    document.querySelector('#countdown').textContent = '';
+    //document.querySelector('#countdown').textContent = '';
+    scissorsSelect.style.border = "3px solid black";
+    paperSelect.style.border = "1px solid black";
+    rockSelect.style.border = "1px solid black";
+
     playerSelection = "scissors";
     game();
 }
