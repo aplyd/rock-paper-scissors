@@ -2,6 +2,8 @@ let playerScore = 0;
 let computerScore = 0;
 let roundIncrement = 0;
 
+let pointsToMarks = [' ' ,' | ', ' | | ', ' | | | ', ' | | | | ', ' | | | | | '];
+
 let cSelectRock = document.querySelector('.c-selectrock');
 let cSelectPaper = document.querySelector('.c-selectpaper');
 let cSelectScissors = document.querySelector('.c-selectscissors');
@@ -14,25 +16,31 @@ let revealRock = document.querySelector('#revealrock');
 let revealPaper = document.querySelector('#revealpaper');
 let revealScissors = document.querySelector('#revealscissors');
 
-// let counter = document.querySelector('#countdown');
-//     counter.style.fontSize = '20px';
-    
+let countdown = document.querySelector('#countdown');
+
+let announcement = document.querySelector('.announcement');
+announcement.style.display = 'none';
+
 
 function game() {
 
-    let roundOptions = ['ROUND ONE', 'ROUND TWO', 'ROUND THREE', 'ROUND FOUR', 'ROUND FIVE', 'GAME OVER']
+    let roundOptions = ['ROUND ONE', 'ROUND TWO', 'ROUND THREE', 'ROUND FOUR', 'FINAL ROUND', 'GAME OVER']
     let roundDisplay = document.querySelector('#round');
     roundDisplay.textContent = roundOptions[roundIncrement];
     roundIncrement++;
-        if (roundIncrement >= 6) {
-            roundIncrement = 0;
-            playerScore = 0;
-            computerScore = 0;
-        }
 
-    if (playerScore == 4 || computerScore == 4) {
-        roundDisplay.textContent = roundOptions[5];
-    }
+        // if (playerScore == 3) {
+        // roundDisplay.textContent = roundOptions[5];
+        // document.querySelector('#countdown').textContent = 'YOU WON';
+        //     reset();
+        // } else if (computerScore == 3) {
+        //     roundDisplay.textContent = roundOptions[5];
+        // document.querySelector('#countdown').textContent = 'AI WON';
+        //     reset();
+        // } else if (roundIncrement >= 6) {
+        //     reset();
+        // }
+
 
     //TODO attempt at countdown but can't get it to work correctly
     // let interval = 3;
@@ -54,19 +62,19 @@ function game() {
     function playRound(playerSelection, computerSelection) {
 
         if (computerSelection == playerSelection) {
-            document.querySelector('#countdown').textContent = 'draw';
+            countdown.textContent = 'draw';
 
         } else if ((computerSelection == 'paper' && playerSelection == 'rock') || 
                     (computerSelection == 'scissors' && playerSelection == 'paper') || 
                     (computerSelection == 'rock' && playerSelection == 'scissors')) {
                         playerScore++;
-                        document.querySelector('#countdown').textContent = 'you won';
+                        countdown.textContent = 'you';
 
         } else if ((computerSelection == 'scissors' && playerSelection == 'rock') || 
                     (computerSelection == 'rock' && playerSelection == 'paper') || 
                     (computerSelection == 'paper' && playerSelection == 'scissors')) {
                         computerScore++;
-                        document.querySelector('#countdown').textContent = 'AI won';
+                        countdown.textContent = 'AI';
         } 
     }
 
@@ -117,11 +125,8 @@ function game() {
             return 'scissors';
         }
 
-    
-
 
     }
-
 
     //assign computer random selection and pass to game engine
     let computerSelection = computerPlay();
@@ -129,18 +134,46 @@ function game() {
 
     const playerpoints = document.querySelector('#playerpoints');
     const computerpoints = document.querySelector('#computerpoints');
-
-    const pointsToMarks = [' ' ,' | ', ' | | ', ' | | | ', ' | | | | ', ' | | | | | '];
-
     playerpoints.textContent = pointsToMarks[playerScore];
     computerpoints.textContent = pointsToMarks[computerScore];
 
     console.log( 'c: ' + computerSelection +  computerScore);
     console.log('p: ' + playerSelection +  playerScore);
 
+    if (playerScore == 3) {
+        announcement.style.display = 'block';
+        countdown.textContent = 'YOU WON';
+        playerpoints = pointsToMarks[0];
+        computerpoints = pointsToMarks[0];
+    } 
+        
+    if (computerScore == 3) {
+        announcement.style.display = 'block';
+        countdown.textContent = 'AI WON';
+        playerpoints = pointsToMarks[0];
+        computerpoints = pointsToMarks[0];
+    } 
+        
+        if (roundIncrement >= 5) {
+        announcement.style.display = 'block';
+        countdown.textContent = 'TIE GAME';
+        playerpoints = pointsToMarks[0];
+        computerpoints = pointsToMarks[0];
+    }
+
 }
 
 
+
+
+function reset() {
+    roundIncrement = 0;
+    playerScore = 0;
+    computerScore = 0;
+    playerpoints = pointsToMarks[0];
+    computerpoints = pointsToMarks[0];
+    announcement.style.display = 'none';
+}
 
 function playRock() {
     //document.querySelector('#countdown').textContent = '';

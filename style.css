@@ -1,7 +1,12 @@
+
+
 html, body {
     max-width: 100%;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
+
 
 h4 {
     text-align: center;
@@ -17,7 +22,46 @@ p {
     grid-template-columns: 100px 1fr 200px 1fr 100px;
     grid-template-rows: 125px auto;
     grid-column-gap: 10px;
-    
+}
+
+.announcement {
+    background-color: black;
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    border: 0px;
+    padding: 0px;
+    margin: 0 auto;
+}
+
+#gameover {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    padding-top: 100px;
+    padding-bottom: 40px;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+#winner {
+    color: white;
+    text-align: center;
+    font-size: 20;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+#playagainbtn {
+    color: black;
+    font-size: 20px;
+    border-radius: 5px;
+    margin: auto;
+    display: block;
+    font-family: 'Raleway', sans-serif;
+    padding: 10px;
 }
 
 .header {
@@ -211,4 +255,8 @@ p {
 
 #computerpoints {
     font-size: 30px;
+}
+
+.clicky {
+    cursor: pointer;
 }

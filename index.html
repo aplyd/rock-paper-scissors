@@ -8,12 +8,20 @@
 </head>
 <body>
 
+    <!-- show/hide div to reveal winner and reset game-->
+    <div class="announcement">
+            <h4 id="gameover">GAME OVER</h4>
+            <h3 id="winner">you won</h3>
+            <button id="playagainbtn" onclick="reset()">play again?</button>
+            
+        </div>
+
     <div class="frame">
 
         <header class="header">
             <h2 id="rpstitle">rock paper scissors</h2>
         </header>
-
+    
             <div class="scorecontainer">
                 <div id="leftscoreframe">
                     <h4>MORTAL HUMAN (YOU)</h4>
@@ -41,29 +49,29 @@
 
             <h4 id="countdown">choose an option</h4>
 
-            <h4 id="round"></h4>
+            <h4 id="round">ROUND ONE</h4>
 
             <!-- player selection -->
-            <div class="rockselect" onclick="playRock()">
-                <p>ROCK</p>
+            <div class="rockselect clicky" onclick="playRock()">
+                <p class="clicky">ROCK</p>
             </div>
-            <div class="paperselect" onclick="playPaper()">
-                <p>PAPER</p>
+            <div class="paperselect clicky" onclick="playPaper()">
+                <p class="clicky">PAPER</p>
             </div>
-            <div class="scissorsselect" onclick="playScissors()">
-                <p>SCISSORS</p>
+            <div class="scissorsselect clicky" onclick="playScissors()">
+                <p class="clicky">SCISSORS</p>
             </div>
         
 
             <!-- computer selection -->
-            <div class="c-selectrock">
-                <p class="mystery" id="revealrock">?</p>
+            <div class="c-selectrock clicky">
+                <p class="mystery clicky" id="revealrock">?</p>
             </div>
-            <div class="c-selectpaper">
-                <p class="mystery" id="revealpaper">?</p>
+            <div class="c-selectpaper clicky">
+                <p class="mystery clicky" id="revealpaper">?</p>
             </div>
-            <div class="c-selectscissors">
-                <p class="mystery" id="revealscissors">?</p>
+            <div class="c-selectscissors clicky">
+                <p class="mystery clicky" id="revealscissors">?</p>
             </div>
         </div>
 
