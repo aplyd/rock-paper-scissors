@@ -220,34 +220,6 @@ p {
     font-size: 30px;
 }
 
-#rock {
-    max-width: 250px;
-    max-height: 150px;
-    height: auto;
-    width: auto;
-    outline: none;
-    border-radius: 5px;
-}
-
-#paper {
-    max-width: 250px;
-    max-height: 150px;
-    height: auto;
-    width: auto;
-    outline: none;
-    border-radius: 5px;
-}
-
-
-#scissors {
-    max-width: 250px;
-    max-height: 150px;
-    height: auto;
-    width: auto;
-    outline: none;
-    border-radius: 5px;
-    overflow: hidden;
-}
 
 #playerpoints {
     font-size: 30px;
@@ -349,8 +321,8 @@ p {
     .selectcontainer {
         grid-column: 2 / 5;
         display: grid;
-        grid-template-columns: 10px 200px 1fr 200px 10px;
-        grid-template-rows: 1fr 1fr 1fr 150px 150px 150px;
+        grid-template-columns: 10px 125px 1fr 125px 10px;
+        grid-template-rows: 1fr 1fr 1fr 125px 125px 125px;
         grid-row-gap: 10px;
         padding-bottom: 50px;
     }
