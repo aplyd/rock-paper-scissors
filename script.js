@@ -21,25 +21,18 @@ let countdown = document.querySelector('#countdown');
 let announcement = document.querySelector('.announcement');
 announcement.style.display = 'none';
 
+let winner = document.querySelector('#winner');
+
+let roundOptions = ['','ROUND ONE', 'ROUND TWO', 'ROUND THREE', 'ROUND FOUR', 'FINAL ROUND',]
+let roundDisplay = document.querySelector('#round');
+
+roundDisplay.textContent = roundOptions[roundIncrement];
 
 function game() {
-
-    let roundOptions = ['ROUND ONE', 'ROUND TWO', 'ROUND THREE', 'ROUND FOUR', 'FINAL ROUND', 'GAME OVER']
-    let roundDisplay = document.querySelector('#round');
-    roundDisplay.textContent = roundOptions[roundIncrement];
+    
     roundIncrement++;
-
-        // if (playerScore == 3) {
-        // roundDisplay.textContent = roundOptions[5];
-        // document.querySelector('#countdown').textContent = 'YOU WON';
-        //     reset();
-        // } else if (computerScore == 3) {
-        //     roundDisplay.textContent = roundOptions[5];
-        // document.querySelector('#countdown').textContent = 'AI WON';
-        //     reset();
-        // } else if (roundIncrement >= 6) {
-        //     reset();
-        // }
+    roundDisplay.textContent = roundOptions[roundIncrement];
+    console.log(roundIncrement);
 
 
     //TODO attempt at countdown but can't get it to work correctly
@@ -132,8 +125,8 @@ function game() {
     let computerSelection = computerPlay();
     playRound(computerSelection, playerSelection);
 
-    const playerpoints = document.querySelector('#playerpoints');
-    const computerpoints = document.querySelector('#computerpoints');
+    let playerpoints = document.querySelector('#playerpoints');
+    let computerpoints = document.querySelector('#computerpoints');
     playerpoints.textContent = pointsToMarks[playerScore];
     computerpoints.textContent = pointsToMarks[computerScore];
 
@@ -142,37 +135,54 @@ function game() {
 
     if (playerScore == 3) {
         announcement.style.display = 'block';
-        countdown.textContent = 'YOU WON';
-        playerpoints = pointsToMarks[0];
-        computerpoints = pointsToMarks[0];
+        winner.textContent = 'YOU WON';
     } 
         
     if (computerScore == 3) {
         announcement.style.display = 'block';
-        countdown.textContent = 'AI WON';
-        playerpoints = pointsToMarks[0];
-        computerpoints = pointsToMarks[0];
+        winner.textContent = 'AI WON';
     } 
         
-        if (roundIncrement >= 5) {
+    if (roundIncrement == 5 && playerScore > computerScore) {
+            announcement.style.display = 'block';
+            winner.textContent = 'YOU WON';
+
+        } else if (roundIncrement == 5 && computerScore > playerScore) {
+            announcement.style.display = 'block';
+            winner.textContent = 'AI WON';
+
+        } else if (roundIncrement == 5 && computerScore == playerScore) {
         announcement.style.display = 'block';
         countdown.textContent = 'TIE GAME';
-        playerpoints = pointsToMarks[0];
-        computerpoints = pointsToMarks[0];
     }
 
 }
 
 
 
-
+//wipe score, remove previous selections, reset marks/points, reset
 function reset() {
     roundIncrement = 0;
     playerScore = 0;
     computerScore = 0;
-    playerpoints = pointsToMarks[0];
-    computerpoints = pointsToMarks[0];
+    playerpoints.textContent = pointsToMarks[0];
+    computerpoints.textContent = pointsToMarks[0];
     announcement.style.display = 'none';
+    roundDisplay.textContent = '';
+    countdown.textContent = 'choose an option';
+
+    cSelectRock.style.backgroundColor = 'black';
+    cSelectPaper.style.backgroundColor = 'black';
+    cSelectScissors.style.backgroundColor = 'black';
+
+    revealRock.textContent = "?";
+    revealPaper.textContent = "?";
+    revealScissors.textContent = "?";
+
+    rockSelect.style.border = "1px solid black";
+    paperSelect.style.border = "1px solid black";
+    scissorsSelect.style.border = "1px solid black";
+
 }
 
 function playRock() {
