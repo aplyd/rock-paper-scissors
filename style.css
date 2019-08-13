@@ -260,3 +260,121 @@ p {
 .clicky {
     cursor: pointer;
 }
+
+
+ /* Large Devices, Wide Screens */
+ @media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+    .frame { 
+    display: grid;
+    grid-template-columns: 20px 1fr 200px 1fr 20px;
+    grid-template-rows: 125px auto;
+    grid-column-gap: 10px;
+    }
+
+    #computerpoints {
+        margin-top: 15px;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+    .frame { 
+        display: grid;
+        grid-template-columns: 20px 1fr 200px 1fr 20px;
+        grid-template-rows: 125px auto;
+        grid-column-gap: 10px;
+    }
+
+    .scorecontainer {
+        grid-column: 2 / 5;
+        display: grid;
+        grid-template-columns: 10px 1fr 100px 1fr 10px;
+        grid-template-rows: 150px auto;
+        padding-top: 60px;
+    }
+    .selectcontainer {
+        grid-column: 2 / 5;
+        display: grid;
+        grid-template-columns: 10px 200px 1fr 200px 10px;
+        grid-template-rows: 1fr 1fr 1fr 150px 150px 150px;
+        grid-row-gap: 10px;
+        padding-bottom: 50px;
+    }
+}
+
+/* Extra Small Devices, Phones  
+@media only screen and (max-width : 480px) {
+    .scorecontainer {
+        grid-column: 2 / 5;
+        display: grid;
+        grid-template-columns: 10px 1fr 100px 1fr 10px;
+        grid-template-rows: 170px auto;
+        padding-top: 20px;
+    }
+
+    #aititle {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #youtitle {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    #playerpoints {
+        margin-top: 10px;
+    }
+
+    #computerpoints {
+        margin-top: 10px;
+    }
+} */
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+    .scorecontainer {
+        grid-column: 2 / 5;
+        display: grid;
+        grid-template-columns: 10px 1fr 100px 1fr 10px;
+        grid-template-rows: 170px auto;
+        padding-top: 20px;
+    }
+
+    .selectcontainer {
+        grid-column: 2 / 5;
+        display: grid;
+        grid-template-columns: 10px 200px 1fr 200px 10px;
+        grid-template-rows: 1fr 1fr 1fr 150px 150px 150px;
+        grid-row-gap: 10px;
+        padding-bottom: 50px;
+    }
+
+    #aititle {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #youtitle {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    #playerpoints {
+        margin-top: 10px;
+    }
+
+    #computerpoints {
+        margin-top: 10px;
+    }
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+
+}

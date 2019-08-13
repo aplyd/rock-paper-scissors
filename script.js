@@ -140,7 +140,7 @@ function game() {
         
     if (computerScore == 3) {
         announcement.style.display = 'block';
-        winner.textContent = 'AI WON';
+        winner.textContent = 'YOU LOST';
     } 
         
     if (roundIncrement == 5 && playerScore > computerScore) {
@@ -149,7 +149,7 @@ function game() {
 
         } else if (roundIncrement == 5 && computerScore > playerScore) {
             announcement.style.display = 'block';
-            winner.textContent = 'AI WON';
+            winner.textContent = 'YOU LOST';
 
         } else if (roundIncrement == 5 && computerScore == playerScore) {
         announcement.style.display = 'block';
