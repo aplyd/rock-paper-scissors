@@ -74,6 +74,9 @@ p {
     text-align: center;
     font-family: 'Raleway', sans-serif;
     padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #scoretitle {
@@ -88,6 +91,7 @@ p {
     grid-template-columns: 100px 1fr 100px 1fr 100px;
     grid-template-rows: 150px auto;
     padding-top: 60px;
+    margin-top: 20px;
 }
 
 #leftscoreframe {
@@ -131,7 +135,7 @@ p {
     font-size: 20px;
     grid-column: 3;
     grid-row: 5;
-    margin: 0;
+    margin: 10px;
 }
 
 #instructions {
@@ -149,7 +153,7 @@ p {
     grid-template-columns: 100px 250px 1fr 250px 100px;
     grid-template-rows: 1fr 1fr 1fr 150px 150px 150px;
     grid-row-gap: 10px;
-    padding-bottom: 50px;
+    padding-bottom: 10px;
 }
 
 .rockselect {
@@ -217,7 +221,7 @@ p {
     color: white;
     text-align: center;
     padding-top: 30px;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 
@@ -235,8 +239,23 @@ p {
 
 
  /* Large Devices, Wide Screens */
- @media only screen and (max-width : 1200px) {
+ @media only screen and (max-width : 1261px) {
+    #youtitle {
+        margin-bottom: 40px;
+    }
 
+    #playerpoints {
+        margin-top: 15px;
+    }
+
+    #computerpoints {
+        margin-top: 15px;
+    }
+
+    #round {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
 /* Medium Devices, Desktops */
@@ -250,6 +269,16 @@ p {
 
     #computerpoints {
         margin-top: 15px;
+    }
+
+    #aititle {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    #youtitle {
+        padding-left: 5px;
+        padding-right: 5px;
     }
 }
 
@@ -308,8 +337,9 @@ p {
     }
 } */
 
+
 /* Extra Small Devices, Phones */ 
-@media only screen and (max-width : 480px) {
+@media only screen and (max-width : 700px) {
     .scorecontainer {
         grid-column: 2 / 5;
         display: grid;
@@ -344,9 +374,121 @@ p {
     #computerpoints {
         margin-top: 10px;
     }
+
+    #revealrock, #revealpaper, #revealscissors  {
+        padding-top: 20px;
+    }
+
+    .rockselect, .paperselect, .scissorsselect {
+        padding-top: 20px;
+    }
+
 }
 
 /* Custom, iPhone Retina */ 
-@media only screen and (max-width : 320px) {
+@media only screen and (max-width : 545px) {
+    .frame { 
+        display: grid;
+        grid-template-columns: 0px 1fr 1fr 1fr 0px;
+        grid-template-rows: 125px auto;
+        grid-column-gap: 10px;
+    }
 
+    .scorecontainer {
+        grid-column: 2 / 5;
+        display: grid;
+        grid-template-columns: 5px 134.98px 1fr 134.98px 5px;
+        grid-template-rows: 170px auto;
+        padding-top: 20px;
+        grid-column-gap: 4px;
+    
+    }
+
+    .selectcontainer {
+        grid-column: 2 / 5;
+        display: grid;
+        grid-template-columns: 5px 1fr 1fr 1fr 5px;
+        grid-template-rows: 1fr 1fr 1fr 125px 125px 125px;
+        grid-row-gap: 10px;
+        grid-column-gap: 4px;
+        padding-bottom: 50px;
+        padding-top: 10px;
+    }
+
+    .rockselect {
+        display: inline-block;
+        grid-row: 6;
+        grid-column: 2;
+
+    }
+
+    .paperselect {
+        display: inline-block;
+        grid-row: 6;
+        grid-column: 3;
+    }
+
+    .scissorsselect {
+        display: inline-block;
+        grid-row: 6;
+        grid-column: 4;
+
+    }
+
+    .c-selectrock {
+        grid-row: 4;
+        grid-column: 2;
+
+    }
+
+    .c-selectpaper {
+        grid-row: 4;
+        grid-column: 3;
+    }
+
+    .c-selectscissors {
+        grid-row: 4;
+        grid-column: 4;
+
+    }
+
+    #round {
+        margin-top: 150px;
+    }
+
+    #countdown {
+        margin-top: 70px;
+    }
+    
+
+    #aititle {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #youtitle {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    #playerpoints {
+        margin-top: 10px;
+    }
+
+    #computerpoints {
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width : 460px) {
+    .rockselect, .paperselect, .scissorsselect, #revealscissors, #revealpaper, #revealrock {
+        font-size: 1em;
+        padding-top: 40px;
+    }
+}
+
+@media only screen and (max-width : 365px) {
+    #vs {
+        display: none;
+    }
 }
