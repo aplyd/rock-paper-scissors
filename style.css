@@ -39,7 +39,7 @@ p {
     text-align: center;
     font-size: 40px;
     padding-top: 100px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     font-family: 'Raleway', sans-serif;
 
 }
@@ -54,15 +54,6 @@ p {
 
 }
 
-#playagainbtn {
-    color: black;
-    font-size: 20px;
-    border-radius: 5px;
-    margin: auto;
-    display: block;
-    font-family: 'Raleway', sans-serif;
-    padding: 10px;
-}
 
 .header {
     grid-column: 2 / 5;
@@ -236,6 +227,23 @@ p {
     cursor: pointer;
 }
 
+#playagain {
+    display: block;
+    font-family:  'Raleway', sans-serif;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+
+#touchplayagain {
+    font-family:  'Raleway', sans-serif;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    display: none;
+}
+
+
 
  /* Large Devices, Wide Screens */
  @media only screen and (max-width : 1261px) {
@@ -302,6 +310,14 @@ p {
         grid-template-columns: 10px 200px 1fr 200px 10px;
         grid-template-rows: 1fr 1fr 1fr 150px 150px 150px;
         grid-row-gap: 10px;
+    }
+
+    #touchplayagain {
+        display: block;
+    }
+
+    #playagain {
+        display: none;
     }
 }
 

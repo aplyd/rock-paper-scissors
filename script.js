@@ -169,6 +169,7 @@ function reset() {
     computerpoints.textContent = pointsToMarks[0];
     announcement.style.display = 'none';
     roundDisplay.textContent = '';
+    countdown.textContent = '';
 
     cSelectRock.style.backgroundColor = 'black';
     cSelectPaper.style.backgroundColor = 'black';
