@@ -73,7 +73,7 @@ p {
     font-size: 42px;
     text-align: center;
     font-family: 'Raleway', sans-serif;
-    padding-top: 20px;
+    padding-top: 0px;
     padding-bottom: 20px;
     margin-left: 10px;
     margin-right: 10px;
@@ -90,7 +90,6 @@ p {
     display: grid;
     grid-template-columns: 100px 1fr 100px 1fr 100px;
     grid-template-rows: 150px auto;
-    padding-top: 60px;
     margin-top: 20px;
 }
 
@@ -296,7 +295,6 @@ p {
         display: grid;
         grid-template-columns: 10px 1fr 100px 1fr 10px;
         grid-template-rows: 150px auto;
-        padding-top: 60px;
     }
     .selectcontainer {
         grid-column: 2 / 5;
@@ -304,38 +302,8 @@ p {
         grid-template-columns: 10px 200px 1fr 200px 10px;
         grid-template-rows: 1fr 1fr 1fr 150px 150px 150px;
         grid-row-gap: 10px;
-        padding-bottom: 50px;
     }
 }
-
-/* Extra Small Devices, Phones  
-@media only screen and (max-width : 480px) {
-    .scorecontainer {
-        grid-column: 2 / 5;
-        display: grid;
-        grid-template-columns: 10px 1fr 100px 1fr 10px;
-        grid-template-rows: 170px auto;
-        padding-top: 20px;
-    }
-
-    #aititle {
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    #youtitle {
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-
-    #playerpoints {
-        margin-top: 10px;
-    }
-
-    #computerpoints {
-        margin-top: 10px;
-    }
-} */
 
 
 /* Extra Small Devices, Phones */ 
@@ -345,7 +313,6 @@ p {
         display: grid;
         grid-template-columns: 10px 1fr 100px 1fr 10px;
         grid-template-rows: 170px auto;
-        padding-top: 20px;
     }
 
     .selectcontainer {
@@ -354,7 +321,6 @@ p {
         grid-template-columns: 10px 125px 1fr 125px 10px;
         grid-template-rows: 1fr 1fr 1fr 125px 125px 125px;
         grid-row-gap: 10px;
-        padding-bottom: 50px;
     }
 
     #aititle {
@@ -399,7 +365,6 @@ p {
         display: grid;
         grid-template-columns: 5px 134.98px 1fr 134.98px 5px;
         grid-template-rows: 170px auto;
-        padding-top: 20px;
         grid-column-gap: 4px;
     
     }
@@ -411,7 +376,6 @@ p {
         grid-template-rows: 1fr 1fr 1fr 125px 125px 125px;
         grid-row-gap: 10px;
         grid-column-gap: 4px;
-        padding-bottom: 50px;
         padding-top: 10px;
     }
 
@@ -484,6 +448,10 @@ p {
     .rockselect, .paperselect, .scissorsselect, #revealscissors, #revealpaper, #revealrock {
         font-size: 1em;
         padding-top: 40px;
+    }
+    #rpstitle {
+        font-size: 2em;
+        padding-top: 30px;
     }
 }
 
