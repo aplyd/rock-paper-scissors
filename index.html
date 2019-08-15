@@ -8,24 +8,38 @@
 </head>
 <body>
 
+    <!-- show/hide div to reveal winner and reset game-->
+    <div class="announcement" onclick="reset()">
+            <h4 id="gameover">GAME OVER</h4>
+            <h3 id="winner"></h3>
+            <h3 id="playagain">click anywhere to play again</h3>
+            <h3 id="touchplayagain">touch anywhere to play again</h3>
+            
+        </div>
+
     <div class="frame">
 
         <header class="header">
             <h2 id="rpstitle">rock paper scissors</h2>
         </header>
-
+    
             <div class="scorecontainer">
-                <div id="leftscore">
-                    <h4>MORTAL HUMAN</h4>
+                <div id="leftscoreframe">
+                    <h4 id="youtitle">MORTAL HUMAN (YOU)</h4>
                     <hr width="90%">
-                    <div id="playerscore"></div>
+                        <div id="playerscore">
+                            <p id="playerpoints"></p>
+                        </div>
                 </div>
 
                 <p id="vs">VS</p>
 
-                <div id="rightscore">
-                    <h4>SUPER COMPLICATED ARTIFICIAL INTELLIGENCE</h4>
+                <div id="rightscoreframe">
+                    <h4 id="aititle">SUPER COMPLICATED ARTIFICIAL INTELLIGENCE</h4>
                     <hr width="90%">
+                        <div id="computerscore">
+                            <p id=computerpoints></p>
+                        </div>
                 </div>
 
             </div>
@@ -34,49 +48,34 @@
 
         <div class="selectcontainer">
 
-            <h4 id="round">ROUND ONE</h4>
+            <h4 id="countdown"></h4>
 
-            <h4 id="countdown">make your selection</h4>
+            <h4 id="round"></h4>
 
-            <div class="rockselect" onclick="playRock()">
-            
-                <input type="image" src="./5461d21528d3db2d59b22a875510f22c.jpg" name="playRock" class="play-buttons" id="rock"/>
+            <!-- player selection -->
+            <div class="rockselect clicky" onclick="playRock()">
+                <p class="clicky">ROCK</p>
             </div>
-            <div class="paperselect" onclick="playPaper()">
-            
-                <input type="image" src="./k88bTFB.jpg" name="playPaper" class="play-buttons" id="paper"/>
+            <div class="paperselect clicky" onclick="playPaper()">
+                <p class="clicky">PAPER</p>
             </div>
-            <div class="scissorsselect" onclick="playScissors()">
-                
-                <input type="image" src="./scissors.jpg" name="playScissors" class="play-buttons" id="scissors"/>
+            <div class="scissorsselect clicky" onclick="playScissors()">
+                <p class="clicky">SCISSORS</p>
             </div>
         
 
-            <div class="computerselect" id="cps1">
-                <p id="mystery">?</p>
+            <!-- computer selection -->
+            <div class="c-selectrock clicky">
+                <p class="mystery clicky" id="revealrock">?</p>
             </div>
-            <div class="computerselect" id="cps2">
-                <p id="mystery">?</p>
+            <div class="c-selectpaper clicky">
+                <p class="mystery clicky" id="revealpaper">?</p>
             </div>
-            <div class="computerselect" id="cps3">
-                <p id="mystery">?</p>
+            <div class="c-selectscissors clicky">
+                <p class="mystery clicky" id="revealscissors">?</p>
             </div>
         </div>
 
-
-            <!--
-        <div class="rockcontainer">
-                <input type="image" src="./5461d21528d3db2d59b22a875510f22c.jpg" name="playRock" class="play-buttons" id="rock" onclick="playRock()"/>
-        </div>
-
-        <div class="papercontainer">
-                <input type="image" src="./k88bTFB.jpg" name="playPaper" class="play-buttons" id="paper" onclick="playPaper()"/>
-        </div>
-
-        <div class="scissorscontainer">
-                <input type="image" src="./scissors.jpg" name="playScissors" class="play-buttons" id="scissors" onclick="playScissors()"/>
-        </div>
-            -->
     </div>
     <script type="text/javascript" src="./script.js"></script>
 </body>

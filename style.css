@@ -1,10 +1,19 @@
+
+
 html, body {
     max-width: 100%;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
+
 
 h4 {
     text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+p {
     font-family: 'Raleway', sans-serif;
 }
 
@@ -13,8 +22,38 @@ h4 {
     grid-template-columns: 100px 1fr 200px 1fr 100px;
     grid-template-rows: 125px auto;
     grid-column-gap: 10px;
-    grid-row-gap: ;
 }
+
+.announcement {
+    background-color: black;
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    border: 0px;
+    padding: 0px;
+    margin: 0 auto;
+}
+
+#gameover {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+#winner {
+    color: white;
+    text-align: center;
+    font-size: 20;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Raleway', sans-serif;
+
+}
+
 
 .header {
     grid-column: 2 / 5;
@@ -25,7 +64,10 @@ h4 {
     font-size: 42px;
     text-align: center;
     font-family: 'Raleway', sans-serif;
-    padding-top: 20px;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #scoretitle {
@@ -39,10 +81,10 @@ h4 {
     display: grid;
     grid-template-columns: 100px 1fr 100px 1fr 100px;
     grid-template-rows: 150px auto;
-    padding-top: 60px;
+    margin-top: 20px;
 }
 
-#leftscore {
+#leftscoreframe {
     grid-column: 2;
     border: solid .5px black;
     border-radius: 10px;
@@ -55,19 +97,26 @@ h4 {
     padding-top: 20px;
 }
 
-#rightscore {
+#rightscoreframe {
     grid-column: 4;
     border: solid .5px black;
     border-radius: 10px;
 }
 
+#playerscore {
+    text-align: center;
+}
+
+#computerscore {
+    text-align: center;
+}
+
 #round {
     font-family:  'Raleway', sans-serif;
     text-align: center;
-    font-size: 20px;
+    font-size: 24px;
     grid-column: 1 / 6;
     grid-row: 4;
-    
 }
 
 #countdown {
@@ -76,7 +125,7 @@ h4 {
     font-size: 20px;
     grid-column: 3;
     grid-row: 5;
-    margin: 0;
+    margin: 10px;
 }
 
 #instructions {
@@ -94,14 +143,19 @@ h4 {
     grid-template-columns: 100px 250px 1fr 250px 100px;
     grid-template-rows: 1fr 1fr 1fr 150px 150px 150px;
     grid-row-gap: 10px;
-    padding-bottom: 50px;
+    padding-bottom: 10px;
 }
 
 .rockselect {
     grid-column: 2;
     grid-row: 4;
     border-radius: 10px;
-
+    background-color: #D1C5B7;
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 25px;
+    border: solid 1px black;
 }
 
 
@@ -109,68 +163,316 @@ h4 {
     grid-column: 2;
     grid-row: 5;
     border-radius: 10px;
-
+    background-color: lightgray;
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 25px;
+    border: solid 1px black;
 }
 
 .scissorsselect {
     grid-column: 2;
     grid-row: 6;
-
     border-radius: 10px;
-
-}
-
-.computerselect {
-    grid-column: 4;
-    background-color: grey;
-    border-radius: 10px;
-
-}
-
-#cps1 {
-    grid-row: 4;
-}
-
-#cps2 {
-    grid-row: 5;
-}
-
-#cps3 {
-    grid-row: 6;
-}
-
-#mystery {
+    background-color: #B7D1B8;
     color: white;
     text-align: center;
     padding-top: 30px;
+    font-size: 25px;
+    border: solid 1px black;
+}
+
+.c-selectrock {
+    grid-column: 4;
+    grid-row: 4;
+    background-color: black;
+    border-radius: 10px;
+    border: solid 1px black;
+}
+
+.c-selectpaper {
+    grid-column: 4;
+    grid-row: 5;
+    background-color: black;
+    border-radius: 10px;
+    border: solid 1px black;
+}
+
+.c-selectscissors {
+    grid-column: 4;
+    grid-row: 6;
+    background-color: black;
+    border-radius: 10px;
+    border: solid 1px black;
+}
+
+.mystery {
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 25px;
+}
+
+
+#playerpoints {
     font-size: 30px;
 }
 
-#rock {
-    max-width: 250px;
-    max-height: 150px;
-    height: auto;
-    width: auto;
-    outline: none;
-    border-radius: 5px;
+#computerpoints {
+    font-size: 30px;
 }
 
-#paper {
-    max-width: 250px;
-    max-height: 150px;
-    height: auto;
-    width: auto;
-    outline: none;
-    border-radius: 5px;
+.clicky {
+    cursor: pointer;
+}
+
+#playagain {
+    display: block;
+    font-family:  'Raleway', sans-serif;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+
+#touchplayagain {
+    font-family:  'Raleway', sans-serif;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    display: none;
 }
 
 
-#scissors {
-    max-width: 250px;
-    max-height: 150px;
-    height: auto;
-    width: auto;
-    outline: none;
-    border-radius: 5px;
-    overflow: hidden;
+
+ /* Large Devices, Wide Screens */
+ @media only screen and (max-width : 1261px) {
+    #youtitle {
+        margin-bottom: 40px;
+    }
+
+    #playerpoints {
+        margin-top: 15px;
+    }
+
+    #computerpoints {
+        margin-top: 15px;
+    }
+
+    #round {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+    .frame { 
+    display: grid;
+    grid-template-columns: 20px 1fr 200px 1fr 20px;
+    grid-template-rows: 125px auto;
+    grid-column-gap: 10px;
+    }
+
+    #computerpoints {
+        margin-top: 15px;
+    }
+
+    #aititle {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    #youtitle {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+    .frame { 
+        display: grid;
+        grid-template-columns: 20px 1fr 200px 1fr 20px;
+        grid-template-rows: 125px auto;
+        grid-column-gap: 10px;
+    }
+
+    .scorecontainer {
+        grid-column: 2 / 5;
+        display: grid;
+        grid-template-columns: 10px 1fr 100px 1fr 10px;
+        grid-template-rows: 150px auto;
+    }
+    .selectcontainer {
+        grid-column: 2 / 5;
+        display: grid;
+        grid-template-columns: 10px 200px 1fr 200px 10px;
+        grid-template-rows: 1fr 1fr 1fr 150px 150px 150px;
+        grid-row-gap: 10px;
+    }
+
+    #touchplayagain {
+        display: block;
+    }
+
+    #playagain {
+        display: none;
+    }
+}
+
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 700px) {
+    .scorecontainer {
+        grid-column: 2 / 5;
+        display: grid;
+        grid-template-columns: 10px 1fr 100px 1fr 10px;
+        grid-template-rows: 170px auto;
+    }
+
+    .selectcontainer {
+        grid-column: 2 / 5;
+        display: grid;
+        grid-template-columns: 10px 125px 1fr 125px 10px;
+        grid-template-rows: 1fr 1fr 1fr 125px 125px 125px;
+        grid-row-gap: 10px;
+    }
+
+    #aititle {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #youtitle {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    #playerpoints {
+        margin-top: 10px;
+    }
+
+    #computerpoints {
+        margin-top: 10px;
+    }
+
+    #revealrock, #revealpaper, #revealscissors  {
+        padding-top: 20px;
+    }
+
+    .rockselect, .paperselect, .scissorsselect {
+        padding-top: 20px;
+    }
+
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 545px) {
+    .frame { 
+        display: grid;
+        grid-template-columns: 0px 1fr 1fr 1fr 0px;
+        grid-template-rows: 125px auto;
+        grid-column-gap: 10px;
+    }
+
+    .scorecontainer {
+        grid-column: 2 / 5;
+        display: grid;
+        grid-template-columns: 5px 134.98px 1fr 134.98px 5px;
+        grid-template-rows: 170px auto;
+        grid-column-gap: 4px;
+    
+    }
+
+    .selectcontainer {
+        grid-column: 2 / 5;
+        display: grid;
+        grid-template-columns: 5px 1fr 1fr 1fr 5px;
+        grid-template-rows: 1fr 1fr 1fr 125px 125px 125px;
+        grid-row-gap: 10px;
+        grid-column-gap: 4px;
+        padding-top: 10px;
+    }
+
+    .rockselect {
+        display: inline-block;
+        grid-row: 6;
+        grid-column: 2;
+
+    }
+
+    .paperselect {
+        display: inline-block;
+        grid-row: 6;
+        grid-column: 3;
+    }
+
+    .scissorsselect {
+        display: inline-block;
+        grid-row: 6;
+        grid-column: 4;
+
+    }
+
+    .c-selectrock {
+        grid-row: 4;
+        grid-column: 2;
+
+    }
+
+    .c-selectpaper {
+        grid-row: 4;
+        grid-column: 3;
+    }
+
+    .c-selectscissors {
+        grid-row: 4;
+        grid-column: 4;
+
+    }
+
+    #round {
+        margin-top: 150px;
+    }
+
+    #countdown {
+        margin-top: 70px;
+    }
+    
+
+    #aititle {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #youtitle {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    #playerpoints {
+        margin-top: 10px;
+    }
+
+    #computerpoints {
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width : 460px) {
+    .rockselect, .paperselect, .scissorsselect, #revealscissors, #revealpaper, #revealrock {
+        font-size: 1em;
+        padding-top: 40px;
+    }
+    #rpstitle {
+        font-size: 2em;
+        padding-top: 10px;
+    }
+}
+
+@media only screen and (max-width : 365px) {
+    #vs {
+        display: none;
+    }
 }
